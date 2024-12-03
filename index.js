@@ -5,9 +5,11 @@ const server = http.createServer(app);
 const socketIo = require("socket.io");
 const io = socketIo(server);
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-});
+// app.get("/", (req, res) => {
+//   res.sendFile(__dirname + "/index.html");
+// });
+
+app.use(express.static("client"));
 
 const clients = [];
 
