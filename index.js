@@ -34,7 +34,7 @@ io.on("connection", (socket) => {
   // Handle disconnections
   socket.on("disconnect", () => {
     clients.splice(clients.indexOf(socket), 1);
-    console.log(`user: ${socket.id} disconnected`);
+    console.log(`user: ${socket.id} disconnected`); 
   });
 });
 
