@@ -5,9 +5,11 @@ const server = http.createServer(app);
 const socketIo = require("socket.io");
 const io = socketIo(server);
 
-app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
-});
+// app.get("/", (req, res) => {
+//   res.sendFile(__dirname + "/index.html");
+// });
+
+app.use(express.static("client"));
 
 const clients = [];
 
@@ -34,7 +36,7 @@ io.on("connection", (socket) => {
   // Handle disconnections
   socket.on("disconnect", () => {
     clients.splice(clients.indexOf(socket), 1);
-    console.log(`user: ${socket.id} disconnected`); 
+    console.log(`user: ${socket.id} disconnected`);
   });
 });
 
