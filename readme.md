@@ -22,9 +22,10 @@ The server does the following:
 ## Installation
 
 1. Clone the repository
-   '''bash
+
+   ```bash
    git clone https://github.com/Chrisjuunor/broadcast-server.git
-   '''
+   ```
 
 2. Install dependencies
    '''bash
